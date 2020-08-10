@@ -30,5 +30,5 @@ LABEL maintainer="Yao Wei Tjong <weitjong@gmail.com>" \
 COPY sysroot/ /sysroot/
 
 RUN apt-get update && apt-get install -y --no-install-recommends qemu-user-static \
-    && cp $(which qemu-aarch64-static) /sysroot/$(which qemu-aarch64-static) \
-    && for l in $(find /sysroot/usr/lib/aarch64-linux-gnu -xtype l); do ln -sf ../../..$(readlink $l) $l; done
+ && cp $(which qemu-aarch64-static) /sysroot/$(which qemu-aarch64-static) \
+ && for l in $(find /sysroot/usr/lib/aarch64-linux-gnu -xtype l); do ln -sf ../../..$(readlink $l) $l; done
